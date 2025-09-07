@@ -1,10 +1,15 @@
 class CommentsController < ApplicationController
   def create
     comment = current_user.comments.build(comment_params)
+    respond_to do |format|
     if comment.save
-      redirect_to racket_path(comment.racket), success: "コメント投稿に成功しました"
+      comment = Comment.new
+      format.html { redirect_to racket_comments_path }
+      format.turbo.stream
+      # redirect_to racket_path(comment.racket), success: "コメント投稿に成功しました"
     else
-      redirect_to racket_path(comment.racket), danger: "コメント投稿に失敗しました"
+      format.html { render: racket, status: unprocessable_enmpty}
+      # redirect_to racket_path(comment.racket), danger: "コメント投稿に失敗しました"
     end
   end
 
