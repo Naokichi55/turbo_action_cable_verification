@@ -1,0 +1,10 @@
+<h2>コメント一覧</h2>
+<!-- id="new_comment"の要素を、ブロックで囲んだ内容と置き換えする -->
+<%= turbo_stream.replace "new_comment" do %>
+  <%= render partial:"form", locals: {plan: @plan, comment: @comment} %>
+<% end %>
+
+<!-- id="comments"の要素に対して、ブロックを囲んだ内容を差し込む -->
+<%= turbo_stream.prepend "comments" do %>
+  <%= render @comments %>
+<% end %>
