@@ -68,3 +68,6 @@ gem "tailwindcss-ruby", "3.4.17"
 # deviseを追加
 gem 'devise'
 
+#binding.pryを追加
+gem 'pry-rails'
+
