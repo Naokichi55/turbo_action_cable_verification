@@ -2,6 +2,7 @@ class CommentsController < ApplicationController
   def create
     @racket = Racket.find(:racket_id)
     @comment = current_user.comments.build(comment_params)
+    @comment.user = current_user
     # @comment.save
     # @comment.broadcast_prepend_later_to("comments_channel")
     #turboを使用するために以下を変更
@@ -29,7 +30,7 @@ class CommentsController < ApplicationController
       else
         respond_to do |format|
           format.turbo_stream do
-            render turbo_stream: turbo_stream.replace("comment-form", partia: "comments/form", locals: { comment: @comment, racket: @racket })
+            render turbo_stream: turbo_stream.replace("comment-form", partial: "comments/form", locals: { comment: @comment, racket: @racket })
           end
         #   @comment = Comment.new
         # format.html { redirect_to racket_comments_path }
