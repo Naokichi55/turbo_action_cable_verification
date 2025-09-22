@@ -2,15 +2,17 @@
 <% if @comment.errors.present? %>
 <!-- id="new_comment"の要素を、ブロックで囲んだ内容と置き換えする -->
   <%= turbo_stream.replace "comment-form" do %>
-    <%= render 'comments/form',comment: @comment, racket: @comment.racket %>
+    <%= render partial: 'form', locals: { comment: @comment, racket: @comment.racket } %>
   <% end %>
-<% else %>
 
-<!-- id="comments"の要素に対して、ブロックを囲んだ内容を差し込む -->
-  <%= turbo_stream.prepend "table-comment" do %>
-    <%= render "comments/comment", comment: @comment %>
-  <% end %>
-  <%= turbo_stream.replace "comment-form" do %>
-    <%= render 'comments/form', comment: Comment.new, racket: @comment.racket %>
-  <% end %>
+<!--<%  # else %>-->
+
+<!--id="comments"の要素に対して、ブロックを囲んだ内容を差し込む -->
+<!--broad_castにて実行するためコメントアウト -->
+<!--  <%=  turbo_stream.prepend "table-comment" do %> -->
+<!--    <%=  render "comments/comment", comment: @comment %> -->
+<!--  <% end %> -->
+<!--  <%= turbo_stream.replace "comment-form" do %> -->
+<!--    <%= #render 'comments/form', comment: Comment.new, racket: @comment.racket %>  -->
+<!--<% end %> -->
 <% end %>

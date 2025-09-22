@@ -94,5 +94,6 @@
       <div id="table-comment">
           <%= render @comments %>
       </div>
+      <%= turbo_stream_from "racket_#{@racket.id}_comments" %>
     </div>
   <% end %>
