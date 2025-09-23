@@ -1,6 +1,7 @@
 class CommentsController < ApplicationController
   def create
-    @racket = Racket.find(:racket_id)
+    @racket = Racket.find(params[:racket_id]
+)
     @comment = current_user.comments.build(comment_params)
     @comment.user = current_user
     # @comment.save
@@ -21,7 +22,7 @@ class CommentsController < ApplicationController
         respond_to do |format|
           format.turbo_stream do
             render turbo_stream: [
-              turbo_stream.prepend("table-comment", prtial: "comments/comment", locals: { comment: @comment}),
+              turbo_stream.prepend("table-comment", partial: "comments/comment", locals: { comment: @comment}),
               turbo_stream.replace("comment-form", partial: "comments/form", locals: { comment: Comment.new, racket: @racket})
             ]
           end
