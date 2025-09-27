@@ -2,12 +2,12 @@ import consumer from "./consumer"
 
 document.addEventListener('DOMContentLoaded', function() {
   const racketElement = document.querySelector('[data-racket-id]');
-  const racketId = racketElement?.databaset.racketId;
+  const racketId = racketElement?.dataset.racketId;
 
- console.log('Racket ID:', racketID);
+ console.log('Racket ID:', racketId);
  console.log('Racket Element:', racketElement);
 
-if(racketID) {
+if(racketId) {
   const subscription = consumer.subscriptions.create({
   channel: "CommentsChannel",
   racket_id: racketId
