@@ -14,8 +14,8 @@ class CommentsController < ApplicationController
             "racket_#{@racket.id}_comments",
             {
               comment: render_to_string(
-                pertial: 'comments/comment',
-                locals: { comments: @comment }
+                partial: 'comments/comment',
+                locals: { comment: @comment }
               )
             }
           )
