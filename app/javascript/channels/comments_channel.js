@@ -4,10 +4,10 @@ document.addEventListener('DOMContentLoaded', function() {
   const racketElement = document.querySelector('[data-racket-id]');
   const racketId = racketElement?.dataset.racketId;
 
- console.log('Racket ID:', racketId);
+ console.log('Racket I:', racketId);
  console.log('Racket Element:', racketElement);
 
-if(racketId) {
+if(racketID) {
   const subscription = consumer.subscriptions.create({
   channel: "CommentsChannel",
   racket_id: racketId
