@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', function() {
  console.log('Racket I:', racketId);
  console.log('Racket Element:', racketElement);
 
-if(racketID) {
+if(racketId) {
   const subscription = consumer.subscriptions.create({
   channel: "CommentsChannel",
   racket_id: racketId
