@@ -25,6 +25,7 @@ if(racketId) {
   received(data) {
      console.log("Received data:", data); 
      //　リアルタイムでコメントを追加
+     //table-commentをracket-idに変更すると投稿がワンクリックで2こ反映される。
     const commentsContainer = document.getElementById('table-comment')
     console.log("Comments container:", commentsContainer);
 

@@ -21,6 +21,7 @@ class CommentsController < ApplicationController
           )
         respond_to do |format|
           format.turbo_stream do
+            # table-commentをracket-idに変更すると投稿がワンクリックで2こ反映される。
             render turbo_stream: [
               turbo_stream.prepend("table-comment", partial: "comments/comment", locals: { comment: @comment}),
               turbo_stream.replace("comment-form", partial: "comments/form", locals: { comment: Comment.new, racket: @racket})
