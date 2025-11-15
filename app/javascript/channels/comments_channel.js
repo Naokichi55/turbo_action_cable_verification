@@ -15,12 +15,12 @@ if(racketId) {
  }, {
   connected() {
     console.log("Connected to comments channel for racket")
-    // Called when the subscription is ready for use on the server
+    // サブスクリプションがサーバー上で使用可能になったときに呼び出される。
   },
 //接続が切断された時の処理。デバッグとし記録。
   disconnected() {
     console.log("Disconnected from comments channel")
-    // Called when the subscription has been terminated by the server
+    // サブスクリプションがサーバー上で終了した時に呼び出される。
   },
 //データを受け取った時の処理について記載。
   received(data) {
@@ -41,5 +41,5 @@ if(racketId) {
 }else{
   console.log("No racket ID found, skipping WebSocket connection");
   }
-    // Called when there's incoming data on the websocket for this channel
+    //チャネルのWebSocketで受信データがあるときに呼び出される
 });

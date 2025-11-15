@@ -1,7 +1,6 @@
 class CommentsController < ApplicationController
   def create
-    @racket = Racket.find(params[:racket_id]
-)
+    @racket = Racket.find(params[:racket_id])
     @comment = current_user.comments.build(comment_params)
     @comment.user = current_user
     # @comment.save
@@ -19,8 +18,8 @@ class CommentsController < ApplicationController
               )
             }
           )
-        respond_to do |format|
-          format.turbo_stream do
+        respond_to do |format| #リクエストされる処理を分けるメソッド
+          format.turbo_stream do #turbo_streamのリクエストが来た際の処理
             # table-commentをracket-idに変更すると投稿がワンクリックで2こ反映される。
             render turbo_stream: [
               turbo_stream.prepend("table-comment", partial: "comments/comment", locals: { comment: @comment}),
