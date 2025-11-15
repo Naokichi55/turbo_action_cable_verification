@@ -24,10 +24,10 @@ if(racketId) {
   },
 //データを受け取った時の処理について記載。
   received(data) {
-     console.log("Received data:", data); 
-     //　リアルタイムでコメントを追加
+     console.log("Received data:", data);
+     //リアルタイムでコメントを追加
      //table-commentをracket-idに変更すると投稿がワンクリックで2回コメントが投稿される。
-    const commentsContainer = document.getElementById('racket-id')
+    const commentsContainer = document.getElementById('table-comment')
     console.log("Comments container:", commentsContainer);
 
     if(commentsContainer && data.comment) {
