@@ -92,6 +92,7 @@
       </div>
     <!-- コメント一覧画面 -->
       <div data-racket-id="<%= @racket.id %>">
+      <!-- table-commentをracket-idに変更すると投稿がワンクリックで2こ反映される。 -->
         <div id="table-comment">
             <%= render @comments %>
         </div>
