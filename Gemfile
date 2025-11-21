@@ -71,3 +71,5 @@ gem 'devise'
 #binding.pryを追加
 gem 'pry-rails'
 
+
+gem "solid_cable", "~> 3.0"
