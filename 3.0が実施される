@@ -1,0 +1,3 @@
+[feature-solid-cable 47d0baf] add:bundle add solid_cableを実行。gem fileにgem solid_cable, ~
+ 3 files changed, 8 insertions(+)
+ create mode 100644 "3.0\343\201\214\345\256\237\346\226\275\343\201\225\343\202\214\343\202\213"
