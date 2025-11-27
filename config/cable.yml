@@ -8,13 +8,20 @@ development:
 test:
   adapter: test
 
+# appのDBと同様のものを使用するためconnect_toを削除
+
 production:
   adapter: solid_cable
-  connects_to:
-    database:
-      writing: primary
   polling_interval: 0.1.seconds
   message_retention: 1.day
+
+# appのDBと同様のものを使用するため以下を削除
+  # connects_to:
+  #   database:
+  #     writing: primary
+
+
+
 
 
 # solid_cableの公式ドキュメントの内容でdatabase.ymlに記載する内容を誤ってcable.ymlに記載してしまったのでコメントアウト
